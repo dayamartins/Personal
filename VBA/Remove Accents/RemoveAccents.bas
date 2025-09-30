@@ -1,4 +1,4 @@
-Attribute VB_Name = "Módulo1"
+Attribute VB_Name = "MÃ³dulo1"
 Sub Button_Process_Accents()
     Dim wsSource As Worksheet
     Dim wsTarget As Worksheet
@@ -33,12 +33,12 @@ Sub Button_Process_Accents()
     ' Ensure the path ends with "\"
     If Right(basePath, 1) <> "\" Then basePath = basePath & "\"
     
-    ' Create the folder if it doesn’t exist
+    ' Create the folder if it doesnâ€™t exist
     If Dir(basePath, vbDirectory) = "" Then
         MkDir basePath
     End If
 
-    ' Define the file name with today’s date
+    ' Define the file name with todayâ€™s date
     todayDate = Format(Date, "yyyy-mm-dd")
     
     ' Combine the path from the cell with the file name
@@ -57,7 +57,7 @@ Function RemoveAccents(CharText As String) As String
     Dim B As String
     Dim i As Integer
 
-    Const AccChars = "ŠšŸÀÁÂÃÄÅÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖÙÚÛÜİàáâãäåçèéêëìíîïğñòóôõöùúûüıÿ"
+    Const AccChars = "Å Å½Å¡Å¾Å¸Ã€ÃÃ‚ÃƒÃ„Ã…Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã™ÃšÃ›ÃœÃÃ Ã¡Ã¢Ã£Ã¤Ã¥Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã°Ã±Ã²Ã³Ã´ÃµÃ¶Ã¹ÃºÃ»Ã¼Ã½Ã¿"
     Const RegChars = "SZszYAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaceeeeiiiidnooooouuuuyy"
 
     For i = 1 To Len(AccChars)
