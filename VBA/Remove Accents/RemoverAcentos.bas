@@ -1,4 +1,4 @@
-Attribute VB_Name = "Módulo1"
+Attribute VB_Name = "MÃ³dulo1"
 Sub Botao_Processar_Acentos()
     Dim wsOrigem As Worksheet
     Dim wsDestino As Worksheet
@@ -12,7 +12,7 @@ Sub Botao_Processar_Acentos()
     ' Define a planilha ativa como origem
     Set wsOrigem = ActiveSheet
     
-    ' Define o intervalo de A a F até a última linha preenchida
+    ' Define o intervalo de A a F atÃ© a Ãºltima linha preenchida
     linha = wsOrigem.Cells(wsOrigem.Rows.Count, "A").End(xlUp).Row
     Set rngOrigem = wsOrigem.Range("A1:F" & linha)
     
@@ -27,13 +27,13 @@ Sub Botao_Processar_Acentos()
         Next col
     Next linha
     
-    ' Pega o caminho base da célula M1 da planilha ativa
+    ' Pega o caminho base da cÃ©lula M1 da planilha ativa
     caminhoBase = wsOrigem.Range("M1").Value
 
     ' Garante que o caminho termine com "\"
     If Right(caminhoBase, 1) <> "\" Then caminhoBase = caminhoBase & "\"
     
-    ' Cria a pasta se não existir
+    ' Cria a pasta se nÃ£o existir
     If Dir(caminhoBase, vbDirectory) = "" Then
         MkDir caminhoBase
     End If
@@ -41,7 +41,7 @@ Sub Botao_Processar_Acentos()
     ' Define o nome do arquivo com data de hoje
     dataHoje = Format(Date, "yyyy-mm-dd")
     
-    ' Junta o caminho da célula com o nome do arquivo
+    ' Junta o caminho da cÃ©lula com o nome do arquivo
     caminho = caminhoBase & "areas_bloqueio_" & dataHoje & ".csv"
 
     ' Salva o novo workbook em CSV UTF-8
@@ -57,7 +57,7 @@ Function Acento(Caract As String) As String
     Dim B As String
     Dim i As Integer
 
-    Const AccChars = "ŠšŸÀÁÂÃÄÅÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖÙÚÛÜİàáâãäåçèéêëìíîïğñòóôõöùúûüıÿ"
+    Const AccChars = "Å Å½Å¡Å¾Å¸Ã€ÃÃ‚ÃƒÃ„Ã…Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã™ÃšÃ›ÃœÃÃ Ã¡Ã¢Ã£Ã¤Ã¥Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã°Ã±Ã²Ã³Ã´ÃµÃ¶Ã¹ÃºÃ»Ã¼Ã½Ã¿"
     Const RegChars = "SZszYAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaceeeeiiiidnooooouuuuyy"
 
     For i = 1 To Len(AccChars)
