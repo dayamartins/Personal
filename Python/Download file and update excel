@@ -1,0 +1,39 @@
+# Download_Data-Update-Excel
+
+## PORTUGUES 🇧🇷
+
+O código faz login em um Site, neste caso, usando uma conta microsoft e passando pela confirmação de permanecer conectado.
+
+Dentro do site, clica em um botão dropdown (Mias Opções) e depois clica em "exportar" na lista que aparece.
+
+Isso faz com que o navegador baixe um arquivo
+
+O codigo entao verifica se o arquivo foi devidamente baixado na pasta downloads.
+
+Em caso afirmativo, ele entra move o arquivo para uma pasta designada e abre um outro arquivo excel que depende desse arquivo baixado para atualizar seus dados via power query.
+
+Ele deixa o outro arquivo aberto até que a atualização dos dados esteja completa e fecha a instancia do excel.
+
+Tudo é feito em segundo plano, tanto a abertura do navegador quando o excel.
+
+Eu utilizo ele em conjunto com o Agendador de Tarefas (Windows), pois preciso do relatorio atualizado varias vezes ao dia. As notificações de inicio e fim são para que eu pare de utilizar o PC pois minha maquina não suporta muitas tarefas simultâneas.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ENGLISH 🇺🇸
+
+The code logs into a website, in this case using a Microsoft account and going through the "stay signed in" confirmation.
+
+Inside the site, it clicks on a dropdown button (More Options) and then clicks on Export from the list that appears.
+
+This makes the browser download a file.
+
+The code then checks whether the file was properly downloaded to the Downloads folder.
+
+If so, it moves the file to a designated folder and opens another Excel file that depends on the downloaded file to update its data via Power Query.
+
+It keeps the other file open until the data refresh is complete and then closes the Excel instance.
+
+Everything is done in the background, including both the browser and Excel.
+
+I use it together with the Windows Task Scheduler, since I need the report updated several times a day. The start and finish notifications are there to remind me to stop using the PC, because my machine cannot handle too many tasks simultaneously.
